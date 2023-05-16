@@ -32,4 +32,4 @@ jobs:
         run: python main.py
         env:
           SALTALK_ID: ${{ secrets.SALTALK_ID }}
-          SALTALK_PW: ${{ secrets.SALTALK_PW }}
+          SALTALK_PASSWORD: ${{ secrets.SALTALK_PASSWORD }}
