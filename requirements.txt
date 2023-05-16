@@ -13,6 +13,8 @@ attrs==23.1.0
     #   trio
 certifi==2023.5.7
     # via selenium
+chromedriver-autoinstaller==0.4.0
+    # via -r requirements.in
 config==0.5.1
     # via -r requirements.in
 exceptiongroup==1.1.1

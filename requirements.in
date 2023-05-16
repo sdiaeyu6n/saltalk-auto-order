@@ -2,3 +2,4 @@ selenium
 fuzzysearch
 python-dotenv
 config
+chromedriver-autoinstaller
