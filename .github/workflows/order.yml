@@ -1,0 +1,30 @@
+on:
+  schedule:
+    - cron:  '0 3 * * 1-5' # 3am weekdays. Ref https://crontab.guru/examples.html
+  push: 
+
+name: Place an order
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@master
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+  
+      - name: Install software
+        run: sudo apt-get install -y chromium-browser
+
+      - name: Install the necessary packages
+        run: pip install requests webdriver-manager selenium
+
+      - name: Run the selenium script
+        run: python main.py
+        env:
+          SALTALK_ID: ${{ secrets.SALTALK_ID }}
+          SALTALK_PW: ${{ secrets.SALTALK_PW }}
