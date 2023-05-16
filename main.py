@@ -8,8 +8,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import chromedriver_autoinstaller
+from pyvirtualdisplay import Display
 
 from fuzzysearch import find_near_matches
+
+display = Display(visible=0, size=(800, 800))  
+display.start()
 
 id = os.getenv("SALTALK_ID")
 pw = os.getenv("SALTALK_PASSWORD")
