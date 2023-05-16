@@ -23,11 +23,22 @@ jobs:
       
       - name: Removing previous chrome instances on runner 
         run: sudo apt purge google-chrome-stable  
+
+      - name: Install Chromium browser
+        run: sudo apt-get install -y chromium-browser
         
+      - name: Install Chromedriver
+        run: |
+          wget https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(chromium-browser --version | awk '{print $2}' | awk -F '[.-]' '{print $1"."$2}')/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          rm chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+
        # Need to fetch reqs if needed
       - name: Installing all necessary packages
         run: |
-          pip install chromedriver-autoinstaller selenium pyvirtualdisplay requests webdriver-manager
+          pip install requests webdriver-manager
           pip install -r requirements.txt
 
       - name: Install xvfb
