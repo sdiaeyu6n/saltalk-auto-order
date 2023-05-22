@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron:  '0 3 * * 1-5' # 3am weekdays. Ref https://crontab.guru/examples.html
+    - cron:  '0 10 * * 1-5' # 10am weekdays. (UST) 3am weekdays PST Ref https://crontab.guru/examples.html
 
 name: Place an order
 jobs:
