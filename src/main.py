@@ -1,3 +1,6 @@
+import sys
+sys.path.append('saltalk-auto-order\src')
+
 import time
 
 from selenium import webdriver

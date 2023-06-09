@@ -1,3 +1,6 @@
+import sys
+sys.path.append('saltalk-auto-order\src')
+
 from datetime import datetime, timedelta
 from selenium.webdriver.common.by import By
 

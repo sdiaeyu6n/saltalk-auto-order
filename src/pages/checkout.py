@@ -1,5 +1,7 @@
-from selenium.webdriver.common.by import By
+import sys
+sys.path.append('saltalk-auto-order\src')
 
+from selenium.webdriver.common.by import By
 from pages.base import BasePage
 from data.locator import CheckoutPageLocators
 
